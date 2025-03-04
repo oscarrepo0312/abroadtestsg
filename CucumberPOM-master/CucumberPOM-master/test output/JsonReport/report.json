@@ -1,0 +1,117 @@
+{
+  "reportName": "Cucumber Extent Report",
+  "reportHeadline": "Automation Test Execution Summary",
+  "theme": "dark",
+  "scenarios": [
+    {
+      "scenario": "Validating Data from Joining Two Flat Files",
+      "status": "Passed",
+      "steps": [
+        {
+          "step": "Given Flat file 'data/employees.csv' exists",
+          "status": "Passed",
+          "executionTime": "200ms"
+        },
+        {
+          "step": "And Flat file 'data/departments.csv' exists",
+          "status": "Passed",
+          "executionTime": "150ms"
+        },
+        {
+          "step": "When I join the files on 'DeptID'",
+          "status": "Passed",
+          "executionTime": "500ms"
+        },
+        {
+          "step": "Then The merged dataset should match the expected records",
+          "status": "Passed",
+          "executionTime": "300ms"
+        }
+      ]
+    },
+    {
+      "scenario": "Validating Record Count After Joining Two Flat Files",
+      "status": "Passed",
+      "steps": [
+        {
+          "step": "Given Flat file 'data/employees.csv' exists",
+          "status": "Passed",
+          "executionTime": "200ms"
+        },
+        {
+          "step": "And Flat file 'data/departments.csv' exists",
+          "status": "Passed",
+          "executionTime": "150ms"
+        },
+        {
+          "step": "When I join the files on 'DeptID'",
+          "status": "Passed",
+          "executionTime": "500ms"
+        },
+        {
+          "step": "Then The total number of records should be 3",
+          "status": "Passed",
+          "executionTime": "250ms"
+        }
+      ]
+    },
+    {
+      "scenario": "Validating Column Data Types After Joining Two Flat Files",
+      "status": "Passed",
+      "steps": [
+        {
+          "step": "Given Flat file 'data/employees.csv' exists",
+          "status": "Passed",
+          "executionTime": "200ms"
+        },
+        {
+          "step": "And Flat file 'data/departments.csv' exists",
+          "status": "Passed",
+          "executionTime": "150ms"
+        },
+        {
+          "step": "When I join the files on 'DeptID'",
+          "status": "Passed",
+          "executionTime": "500ms"
+        },
+        {
+          "step": "Then The columns should have the following data types",
+          "status": "Passed",
+          "executionTime": "300ms"
+        }
+      ]
+    },
+    {
+      "scenario": "Validating Error If There Is No Joining Key in Two Flat Files",
+      "status": "Failed",
+      "steps": [
+        {
+          "step": "Given Flat file 'data/employees.csv' exists",
+          "status": "Passed",
+          "executionTime": "200ms"
+        },
+        {
+          "step": "And Flat file 'data/departments_without_key.csv' exists",
+          "status": "Passed",
+          "executionTime": "150ms"
+        },
+        {
+          "step": "When I attempt to join the files on 'DeptID'",
+          "status": "Failed",
+          "executionTime": "500ms",
+          "errorMessage": "Join key not found in one or both files"
+        },
+        {
+          "step": "Then An error message should be displayed 'Join key not found in one or both files'",
+          "status": "Skipped",
+          "executionTime": "0ms"
+        }
+      ]
+    }
+  ],
+  "executionTime": "5.4s",
+  "totalScenarios": 4,
+  "passed": 3,
+  "failed": 1,
+  "skipped": 1
+}
